@@ -34,15 +34,18 @@ function showKeyPopup(accountIndex, roleIndex) {
     		  generator.document.write('<tr><td colspan=1>Role :</td><td colspan=2>' + role + '</td></tr>');
     		  generator.document.write('<tr><td colspan=1>Expires in (Hours) :</td><td colspan=2>' + time + '</td></tr>');
      		  generator.document.write('<tr><td>Access Key    :</td>');
-    		  generator.document.write("<td colspan=2><input type='text' size=27  name='accessKey' readonly value=" + obj[0] +  "></td>");
+    		  generator.document.write("<td colspan=2><input type='text' size=27  name='accessKey' readonly value=" + accessKey +  "></td>");
 			  generator.document.write('</tr>');
     		  generator.document.write('<tr><td>Secret Key    :</td>');		
-    		  generator.document.write('<td colspan=2><input type="text" size=55 name="secretKey" readonly value=' + obj[1] + '></td>');		
+    		  generator.document.write('<td colspan=2><input type="text" size=55 name="secretKey" readonly value=' + secretKey + '></td>');
 			  generator.document.write('</tr>');
     		  generator.document.write('<tr><td>Session Token :</td>');
-    		  generator.document.write('<td colspan=2><textarea rows="8" cols="50" name="sessionToken" readonly>' + obj[2] +'</textarea></td></tr>');
-     		  generator.document.write('<tr><td>Temporary AWS Console URL :</td>');
-    		  generator.document.write('<td><a href=' + obj[3] + '>Access AWS console</a></td>');
+    		  generator.document.write('<td colspan=2><textarea rows="8" cols="50" name="sessionToken" readonly>' + sessionToken +'</textarea></td></tr>');
+			  generator.document.write('<tr><td>AWS CLI Variables :</td>');
+			  generator.document.write('<td><textarea rows="12" cols="50" name="cliVariables" readonly> export AWS_ACCESS_KEY_ID=' + accessKey + ' && export AWS_SECRET_ACCESS_KEY=' + secretKey + ' && export AWS_SESSION_TOKEN=' + sessionToken  + " </td>");
+			  generator.document.write('</tr>');
+			  generator.document.write('<tr><td>Temporary AWS Console URL :</td>');
+			  generator.document.write('<td><a href=' + consoleUrl + '>Access AWS console</a></td>');
 			  generator.document.write('</tr></table>');
     		  generator.document.close();
     	},
